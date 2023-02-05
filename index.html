@@ -136,6 +136,15 @@
     else if (rightPaddle.y > RightmaxPaddleY) {
       rightPaddle.y = RightmaxPaddleY;
     }
+    // Если левая платформа пытается вылезти за игровое поле вниз,
+    if (leftPaddle.y < grid) {
+      // то оставляем её на месте
+      leftPaddle.y = grid;
+    }
+    // Проверяем то же самое сверху
+    else if (leftPaddle.y > LeftmaxPaddleY) {
+      leftPaddle.y = LeftmaxPaddleY;
+    }
 
     // Рисуем платформы белым цветом
     context.fillStyle = 'white';
